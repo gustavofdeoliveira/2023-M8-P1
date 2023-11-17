@@ -22,9 +22,11 @@ class ChatBotNode():
             command = input("Digite o seu comando: ")
             if command.lower() == 'sair':  # Verifica a condição de saída
                 exit()
+            #looping para verificar o comando
             for key, value in intent_dict.items():
                 pattern = re.compile(key)
                 groups = pattern.findall(command)
+                # se achou algo, printa
                 if groups:
                     if value == "atualizar":
                         print(action_dict[value])
